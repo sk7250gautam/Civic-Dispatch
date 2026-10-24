@@ -17,7 +17,17 @@ def create_app(config_name: str = None) -> Flask:
     migrate.init_app(app, db)
     login_manager.init_app(app)
     limiter.init_app(app)
-    cors.init_app(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+    allowed_origins = [
+        r"http://localhost:\d+",
+        r"http://127\.0\.0\.1:\d+",
+        r"https://.*\.vercel\.app",
+        r"https://.*\.onrender\.com"
+    ]
+    custom_origins = os.getenv("CORS_ORIGINS")
+    if custom_origins:
+        allowed_origins.extend([o.strip() for o in custom_origins.split(",") if o.strip()])
+
+    cors.init_app(app, resources={r"/api/*": {"origins": allowed_origins}}, supports_credentials=True)
     ma.init_app(app)
 
     # Configure User Loader

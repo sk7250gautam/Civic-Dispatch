@@ -1,6 +1,8 @@
 # 🏛️ CIVIC DISPATCH
 ### AI-Assisted Civic Grievance, Field Operations & SLA Escalation Platform
 
+🌐 **Live Website:** https://civic-dispatch.vercel.app/
+
 [![CI Pipeline](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square&logo=github-actions)](.github/workflows/ci.yml)
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?style=flat-square&logo=python)](https://python.org)
 [![React 18](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
@@ -285,3 +287,4 @@ civic-dispatch/
 
 ## ⚖️ License
 This project is open-source software licensed under the [MIT License](LICENSE).
+
